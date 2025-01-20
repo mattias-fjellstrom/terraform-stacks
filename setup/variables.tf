@@ -13,11 +13,6 @@ variable "github_organization_name" {
   description = "GitHub organization (or private handle) name"
 }
 
-variable "github_repository_name" {
-  type        = string
-  description = "GitHub repository name"
-}
-
 variable "hcp_terraform_organization_name" {
   type        = string
   description = "HCP Terraform organization name"
