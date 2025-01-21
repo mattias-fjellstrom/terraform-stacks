@@ -3,6 +3,7 @@ resource "github_repository" "demo1" {
   description        = "Demo repository for Terraform Stacks"
   gitignore_template = "Terraform"
   topics             = ["terraform"]
+  visibility         = "private"
 
   has_wiki        = false
   has_discussions = false
