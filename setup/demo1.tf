@@ -1,3 +1,19 @@
+resource "tfe_stack" "demo1" {
+  name       = "stack-demo-1"
+  project_id = tfe_project.demo.id
+
+  vcs_repo {
+    branch         = "main"
+    identifier     = "${var.github_organization_name}/${github_repository.demo1.name}"
+    oauth_token_id = data.tfe_oauth_client.github.oauth_token_id
+  }
+
+  depends_on = [
+    github_repository_file.demo1_all,
+    github_repository_file.demo1_locals,
+  ]
+}
+
 resource "github_repository" "demo1" {
   name               = "terraform-stacks-demo-1"
   description        = "Demo repository for Terraform Stacks"
@@ -18,7 +34,7 @@ locals {
   demo1_file_paths = { for f in local.demo1_files : f => "${local.demo1_path}/${f}" }
 }
 
-resource "github_repository_file" "all" {
+resource "github_repository_file" "demo1_all" {
   for_each = local.demo1_file_paths
 
   repository = github_repository.demo1.name

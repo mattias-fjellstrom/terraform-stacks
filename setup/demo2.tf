@@ -1,3 +1,14 @@
+# resource "tfe_stack" "demo2" {
+#   name       = "stack-demo-2"
+#   project_id = tfe_project.demo.id
+
+#   vcs_repo {
+#     branch         = "main"
+#     identifier     = "${var.github_organization_name}/${github_repository.demo2.name}"
+#     oauth_token_id = data.tfe_oauth_client.github.oauth_token_id
+#   }
+# }
+
 # resource "github_repository" "demo2" {
 #   name               = "terraform-stacks-demo-2"
 #   description        = "Demo repository for Terraform Stacks"

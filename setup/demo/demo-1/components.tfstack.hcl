@@ -36,7 +36,6 @@ component "network" {
 
   providers = {
     azurerm = provider.azurerm.this
-    random  = provider.random.this
   }
 }
 
@@ -50,6 +49,5 @@ component "keyvault" {
 
   providers = {
     azurerm = provider.azurerm.this
-    random  = provider.random.this
   }
 }
