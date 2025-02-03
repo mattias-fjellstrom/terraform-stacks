@@ -10,7 +10,7 @@ orchestrate "auto_approve" "development" {
   }
 
   check {
-    condition = context.success 
+    condition = context.success
     reason    = "Plan operation was not successful"
   }
 }

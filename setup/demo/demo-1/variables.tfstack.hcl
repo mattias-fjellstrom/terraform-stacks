@@ -4,11 +4,12 @@ variable "location" {
 }
 
 variable "name_suffix" {
-  type = string
+  type    = string
+  default = "techtalk"
 }
 
-variable "identity_token" { 
-  type      = string 
+variable "identity_token" {
+  type      = string
   ephemeral = true
 }
 

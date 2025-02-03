@@ -1,12 +1,11 @@
 identity_token "azurerm" {
-  audience = [ "api://AzureADTokenExchange" ]
+  audience = ["api://AzureADTokenExchange"]
 }
 
-deployment "development" {
+deployment "swedencentral" {
   inputs = {
-    location       = "swedencentral"
-    name_suffix    = "development"
-    
+    location    = "swedencentral"
+
     identity_token  = identity_token.azurerm.jwt
     client_id       = local.azurerm_client_id
     subscription_id = local.azurerm_subscription_id
@@ -14,11 +13,10 @@ deployment "development" {
   }
 }
 
-deployment "staging" {
+deployment "westeurope" {
   inputs = {
-    location       = "swedencentral"
-    name_suffix    = "staging"
-    
+    location    = "westeurope"
+
     identity_token  = identity_token.azurerm.jwt
     client_id       = local.azurerm_client_id
     subscription_id = local.azurerm_subscription_id
@@ -26,11 +24,21 @@ deployment "staging" {
   }
 }
 
-deployment "production" {
+deployment "northeurope" {
   inputs = {
-    location       = "swedencentral"
-    name_suffix    = "production"
-    
+    location    = "northeurope"
+
+    identity_token  = identity_token.azurerm.jwt
+    client_id       = local.azurerm_client_id
+    subscription_id = local.azurerm_subscription_id
+    tenant_id       = local.azurerm_tenant_id
+  }
+}
+
+deployment "eastus" {
+  inputs = {
+    location    = "eastus"
+
     identity_token  = identity_token.azurerm.jwt
     client_id       = local.azurerm_client_id
     subscription_id = local.azurerm_subscription_id
