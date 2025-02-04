@@ -7,6 +7,11 @@
 #     identifier     = "${var.github_organization_name}/${github_repository.demo2.name}"
 #     oauth_token_id = data.tfe_oauth_client.github.oauth_token_id
 #   }
+
+#   depends_on = [
+#     github_repository_file.demo2_all,
+#     github_repository_file.demo2_locals,
+#   ]
 # }
 
 # resource "github_repository" "demo2" {

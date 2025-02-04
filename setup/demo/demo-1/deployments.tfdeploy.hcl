@@ -5,6 +5,7 @@ identity_token "azurerm" {
 deployment "swedencentral" {
   inputs = {
     location    = "swedencentral"
+    name_suffix = "techtalk"
 
     identity_token  = identity_token.azurerm.jwt
     client_id       = local.azurerm_client_id

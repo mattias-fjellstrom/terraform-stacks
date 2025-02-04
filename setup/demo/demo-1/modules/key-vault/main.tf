@@ -1,7 +1,7 @@
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "default" {
-  name                       = "kv-${var.name_suffix}"
+  name                       = substr("kv-${var.resource_group.location}-${var.name_suffix}", 0, 24)
   resource_group_name        = var.resource_group.name
   location                   = var.resource_group.location
   sku_name                   = "standard"
