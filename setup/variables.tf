@@ -1,8 +1,3 @@
-variable "aws_region" {
-  type        = string
-  description = "AWS region for resources"
-}
-
 variable "azure_subscription_id" {
   type        = string
   description = "Azure subscription ID"

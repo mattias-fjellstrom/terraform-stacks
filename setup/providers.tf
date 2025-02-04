@@ -1,10 +1,5 @@
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.84.0"
-    }
-
     azuread = {
       source  = "hashicorp/azuread"
       version = "3.1.0"
@@ -25,10 +20,6 @@ terraform {
       version = "0.62.0"
     }
   }
-}
-
-provider "aws" {
-  region = var.aws_region
 }
 
 provider "azurerm" {
